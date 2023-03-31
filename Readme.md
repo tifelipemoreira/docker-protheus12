@@ -2,7 +2,7 @@
 Esse projeto foi desenvolvido para fornecer uma maneira fácil e rápida de configurar um ambiente de teste do Protheus da TOTVS em um ambiente Docker.
 
 # Pré-requisitos
-Antes de começar, é necessário ter o Docker instalado em seu sistema.
+Antes de começar, é necessário ter o Docker instalado e iniciado em seu sistema.
 
 # Informações do projeto
 •	O projeto deve ser utilizado apenas com a empresa de Testes 99. 
