@@ -1,2 +1,5 @@
 
 docker/dockerfiles/totvs
+docker/dockerfiles/sql_data/data/*
+docker/dockerfiles/sql_data/log/*
+docker/dockerfiles/sql_data/secrets/*
