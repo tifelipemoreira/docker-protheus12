@@ -20,7 +20,7 @@ Siga os seguintes passos para instalar e configurar o ambiente de teste do Proth
 2.	Copie a pasta "totvs" disponibilizada no link https://wkjfs.com.br para dentro do diretório "dockerfiles".
 3.	No terminal, acesse o diretório "docker" e execute o comando docker-compose up -d para subir todos os serviços. Alternativamente, você pode utilizar o Visual Studio Code com a extensão Docker e clicar com o botão direito no arquivo "docker-compose.yml" e selecionar a opção "Compose Up".
 4.	Verifique se todos os containers estão rodando corretamente e aguarde aproximadamente 5 minutos. Esse tempo é necessário para a montagem e configuração das máquinas.
-5.	Acesse o "dbaccess_windows" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@23" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
+5.	Acesse o "dbaccess_windows" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@2023" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
 6.	Após isso, basta acessar o Protheus através do SmartClient disponível na pasta "totvs/protheus12/binarios/".
 
 # Importante!
