@@ -5,8 +5,10 @@ Esse projeto foi desenvolvido para fornecer uma maneira fácil e rápida de conf
 Antes de começar, é necessário ter o Docker instalado em seu sistema.
 
 # Informações do projeto
-•	O projeto deve ser utilizado apenas com a empresa de Testes 99.
-•	O banco de dados tem o alias "totvs", o usuario é "sa" e a senha é "protheus@23".
+•	O projeto deve ser utilizado apenas com a empresa de Testes 99. 
+
+•	O banco de dados tem o alias "totvs", o usuario é "sa" e a senha é "protheus@23". 
+
 •	Para acessar o Protheus após a instalação, você deve utilizar o usuário "admin" e deixar a senha em branco. " " (é preciso colocar um espaço em branco.)
 
 # Instalação
