@@ -1,6 +1,9 @@
 # Projeto para Ambiente de Teste Protheus 12 no Docker
 Esse projeto foi desenvolvido para fornecer uma maneira fácil e rápida de configurar um ambiente de teste do Protheus da TOTVS em um ambiente Docker.
 
+# Vídeo tutorial
+Você pode assistir a um vídeo tutorial de todo o processo no YouTube através deste link: [inserir link do vídeo]
+
 # Pré-requisitos
 Antes de começar, é necessário ter o Docker instalado e iniciado em seu sistema.
 
