@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+  license:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.license
+    container_name: license
+    image: license-image
+    environment:
+      LD_LIBRARY_PATH: /totvs/license/bin/appserver
+    ports:
+      - "5555:5555"
+      - "2234:2234"
+    restart: always
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/totvs/license:/totvs/license/
+
+  mssql:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.mssql
+    image: mssql_server:2017-latest
+    container_name: mssql
+    depends_on:
+      - license
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+      SA_PASSWORD: protheus@2023
+    ports:
+      - "1433:1433"
+      - "7890:7890"
+    #restart: always
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/sql_data/data:/var/opt/mssql/data
+      - ./dockerfiles/sql_data/log:/var/opt/mssql/log
+      - ./dockerfiles/sql_data/secrets:/var/opt/mssql/secrets
+      - ./dockerfiles/totvs/dbaccess:/totvs/dbaccess/
+
+  appserver:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.appserver
+    container_name: appserver
+    image: appserver-image
+    depends_on:
+      - license
+      - mssql
+    environment:
+      LD_LIBRARY_PATH: /totvs/protheus12/binarios/appserver
+    #restart: always
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "4321:4321"
+      - "8020:8020"
+      - "8097:8097"
+      - "2345:2345"
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/totvs/protheus12:/totvs/protheus12/
+      - ./dockerfiles/totvs/protheus_data:/totvs/protheus_data/
+
+networks:
+  net_protheus:
+    driver: bridge

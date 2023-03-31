@@ -1,0 +1,25 @@
+
+# Utilizando a imagem base do Ubuntu Focal (20.04)
+FROM ubuntu:focal
+
+# Definindo informações de manutenção
+LABEL maintainer="Seu Nome <seu.email@example.com>"
+
+# Atualizando os pacotes e instalando dependências necessárias (se houver)
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY ./conf-files/ls_appserver.ini /tmp/
+COPY ./build/license/entrypoint-license.sh /opt/
+
+# Expondo a porta 
+EXPOSE 5555 2234 
+
+# Definindo o comando padrão para iniciar o serviço do DBAccess
+
+CMD /opt/entrypoint-license.sh
+
+
+#CMD /opt/entrypoint-license.sh

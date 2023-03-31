@@ -1,0 +1,24 @@
+
+# Utilizando a imagem base do Ubuntu Focal (20.04)
+FROM ubuntu:focal
+
+# Definindo informações de manutenção
+LABEL maintainer="Seu Nome <seu.email@example.com>"
+
+# Atualizando os pacotes e instalando dependências necessárias (se houver)
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y dmidecode \
+    && rm -rf /var/lib/apt/lists/*
+
+
+
+COPY ./conf-files/appserver.ini /tmp/
+COPY ./build/appserver/entrypoint-appserver.sh /opt/
+
+EXPOSE 80 8080 4321 8020 8097 2345
+
+# Definindo o comando padrão para iniciar o serviço do DBAccess
+
+CMD /opt/entrypoint-appserver.sh
+

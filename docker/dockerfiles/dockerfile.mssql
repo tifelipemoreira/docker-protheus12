@@ -1,0 +1,19 @@
+# Imagem Docker
+FROM mcr.microsoft.com/mssql/server:2017-latest
+
+RUN apt-get update && apt-get install -y nano locate apt-file unixodbc-dev libnss3 \
+    libgl1 libxmu6 libxrender1 libxrandr2 libxcursor1 libxinerama1 libxft2 && apt-get clean
+
+COPY ./conf-files/odbc.ini /etc
+COPY ./conf-files/odbcinst.ini /etc
+COPY ./build/mssql/db_mssql.sql /opt/mssql
+COPY ./build/mssql/entrypoint-mssql.sh /opt
+#configurações dbaccss
+COPY ./conf-files/dbaccess.ini /tmp/
+COPY ./build/dbaccess/entrypoint-dbaccess.sh /opt/
+
+RUN chmod 777 /opt/entrypoint-mssql.sh
+
+EXPOSE 1433 7890
+
+CMD /opt/entrypoint-mssql.sh
