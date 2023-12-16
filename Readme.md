@@ -18,10 +18,11 @@ Antes de começar, é necessário ter o Docker instalado e iniciado em seu siste
 Siga os seguintes passos para instalar e configurar o ambiente de teste do Protheus:
 1.	Clone este projeto em seu sistema - https://github.com/tifelipemoreira/docker-protheus12.git
 2.	Copie a pasta "totvs" disponibilizada no link https://1drv.ms/u/s!AgbDqR1KI2Dfz60FFxD9_uqXQQAJfw?e=CIyfNS para dentro do diretório "dockerfiles".
-3.	No terminal, acesse o diretório "docker" e execute o comando docker-compose up -d para subir todos os serviços. Alternativamente, você pode utilizar o Visual Studio Code com a extensão Docker e clicar com o botão direito no arquivo "docker-compose.yml" e selecionar a opção "Compose Up".
-4.	Verifique se todos os containers estão rodando corretamente e aguarde aproximadamente 5 minutos. Esse tempo é necessário para a montagem e configuração das máquinas.
-5.	Acesse o "dbaccess_windows" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@2023" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
-6.	Após isso, basta acessar o Protheus através do SmartClient disponível na pasta "totvs/protheus12/binarios/".
+3.	Confira os arquivos com extensão .sh se o formato de quebra de linha está LF, se não estiver configure para LF pois isso causa erros na montagem dos containers.
+4.	No terminal, acesse o diretório "docker" e execute o comando docker-compose up -d para subir todos os serviços. Alternativamente, você pode utilizar o Visual Studio Code com a extensão Docker e clicar com o botão direito no arquivo "docker-compose.yml" e selecionar a opção "Compose Up".
+5.	Verifique se todos os containers estão rodando corretamente e aguarde aproximadamente 5 minutos. Esse tempo é necessário para a montagem e configuração das máquinas.
+6.	Acesse o "dbmonitor_window.exe" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@2023" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
+7.	Após isso, basta acessar o Protheus através do SmartClient disponível na pasta "totvs/protheus12/binarios/".
 
 # Importante!
 Todos os dados salvos serão gravados dentro do diretórios sql_data se esses arquivos não forem apagados, mesmo parando o container na proxima execução seus dados ainda estarão disponíveis.
