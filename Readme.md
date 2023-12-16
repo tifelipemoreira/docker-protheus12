@@ -16,7 +16,7 @@ Antes de começar, é necessário ter o Docker instalado e iniciado em seu siste
 
 # Instalação
 Siga os seguintes passos para instalar e configurar o ambiente de teste do Protheus:
-1.	Clone este projeto em seu sistema.
+1.	Clone este projeto em seu sistema - https://github.com/tifelipemoreira/docker-protheus12.git
 2.	Copie a pasta "totvs" disponibilizada no link https://1drv.ms/f/s!AgbDqR1KI2Dfz4UxjiAxUO9FdoOgig?e=Q5IYsM para dentro do diretório "dockerfiles".
 3.	No terminal, acesse o diretório "docker" e execute o comando docker-compose up -d para subir todos os serviços. Alternativamente, você pode utilizar o Visual Studio Code com a extensão Docker e clicar com o botão direito no arquivo "docker-compose.yml" e selecionar a opção "Compose Up".
 4.	Verifique se todos os containers estão rodando corretamente e aguarde aproximadamente 5 minutos. Esse tempo é necessário para a montagem e configuração das máquinas.
