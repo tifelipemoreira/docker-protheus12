@@ -1,5 +1,5 @@
 # Projeto para Ambiente de Teste Protheus 12 no Docker
-Esse projeto foi desenvolvido para fornecer uma maneira fácil e rápida de configurar um ambiente de teste do Protheus da TOTVS em um ambiente Docker.
+Esse projeto foi desenvolvido para fornecer uma maneira fácil e rápida de configurar um ambiente de #TESTE do Protheus 12 da TOTVS em um ambiente Docker.
 
 # Vídeo tutorial
 Você pode assistir a um vídeo tutorial de todo o processo no YouTube através deste link: [inserir link do vídeo]
@@ -17,7 +17,7 @@ Antes de começar, é necessário ter o Docker instalado e iniciado em seu siste
 # Instalação
 Siga os seguintes passos para instalar e configurar o ambiente de teste do Protheus:
 1.	Clone este projeto em seu sistema - https://github.com/tifelipemoreira/docker-protheus12.git
-2.	Copie a pasta "totvs" disponibilizada no link https://1drv.ms/f/s!AgbDqR1KI2Dfz4UxjiAxUO9FdoOgig?e=Q5IYsM para dentro do diretório "dockerfiles".
+2.	Copie a pasta "totvs" disponibilizada no link https://1drv.ms/u/s!AgbDqR1KI2Dfz60FFxD9_uqXQQAJfw?e=CIyfNS para dentro do diretório "dockerfiles".
 3.	No terminal, acesse o diretório "docker" e execute o comando docker-compose up -d para subir todos os serviços. Alternativamente, você pode utilizar o Visual Studio Code com a extensão Docker e clicar com o botão direito no arquivo "docker-compose.yml" e selecionar a opção "Compose Up".
 4.	Verifique se todos os containers estão rodando corretamente e aguarde aproximadamente 5 minutos. Esse tempo é necessário para a montagem e configuração das máquinas.
 5.	Acesse o "dbaccess_windows" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@2023" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
@@ -26,5 +26,4 @@ Siga os seguintes passos para instalar e configurar o ambiente de teste do Proth
 # Importante!
 Todos os dados salvos serão gravados dentro do diretórios sql_data se esses arquivos não forem apagados, mesmo parando o container na proxima execução seus dados ainda estarão disponíveis.
 
-# Licença
-Este projeto é distribuído sob a Licença MIT. Veja o arquivo LICENSE para mais informações.
+
