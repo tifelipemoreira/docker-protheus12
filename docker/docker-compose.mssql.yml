@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  mssql:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.mssql
+    image: mssql_server:2017-latest
+    container_name: mssql
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+      SA_PASSWORD: protheus@2023
+    ports:
+      - "1433:1433"
+      - "7890:7890"
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/sql_data/data:/var/opt/mssql/data
+      - ./dockerfiles/sql_data/log:/var/opt/mssql/log
+      - ./dockerfiles/sql_data/secrets:/var/opt/mssql/secrets
+      - ./dockerfiles/totvs/dbaccess:/totvs/dbaccess/
+
+networks:
+  net_protheus:
+    external:
+      name: net_protheus

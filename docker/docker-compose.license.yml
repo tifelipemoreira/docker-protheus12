@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  license:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.license
+    container_name: license
+    image: license-image
+    environment:
+      LD_LIBRARY_PATH: /totvs/license/bin/appserver
+    ports:
+      - "5555:5555"
+      - "2234:2234"
+    restart: always
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/totvs/license:/totvs/license/
+
+networks:
+  net_protheus:
+    name: net_protheus
+    driver: bridge

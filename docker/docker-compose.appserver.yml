@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  appserver:
+    build:
+      context: ./dockerfiles
+      dockerfile: dockerfile.appserver
+    container_name: appserver
+    image: appserver-image
+    environment:
+      LD_LIBRARY_PATH: /totvs/protheus12/binarios/appserver
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "4321:4321"
+      - "8020:8020"
+      - "8097:8097"
+      - "2345:2345"
+    networks:
+      - net_protheus
+    volumes:
+      - ./dockerfiles/totvs/protheus12:/totvs/protheus12/
+      - ./dockerfiles/totvs/protheus_data:/totvs/protheus_data/
+
+networks:
+  net_protheus:
+    external:
+      name: net_protheus
