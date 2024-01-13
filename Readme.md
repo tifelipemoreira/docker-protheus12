@@ -36,9 +36,9 @@ Siga os seguintes passos para instalar e configurar o ambiente de teste do Proth
 
 5.	Acesse o "dbmonitor_window.exe" disponível dentro da pasta "totvs/dbaccess/" e informe o usuário "sa" e a senha "protheus@2023" no SQL Server. Em seguida, salve e teste a conexão no alias "totvs".
 
-6.	Após isso, basta acessar o Protheus através do SmartClient disponível na pasta "totvs/protheus12/binarios/".
+6.	Após isso, basta acessar o Protheus através do SmartClient disponível na pasta "totvs/protheus12/binarios/" e para o primeiro acesso e criação das tabelas acesse o modulo SIGACFG.
 
-7.  Agora é só aguardar a inicializazção do dicionario e acessar o protheus. Para acessar o Protheus após a instalação, você deve utilizar o usuário "admin" e deixar a senha em branco. " " (é preciso colocar um espaço em branco.)
+7.  Agora é só aguardar a inicialização do dicionario e acessar o protheus. Para acessar o Protheus após a instalação, você deve utilizar o usuário "admin" e deixar a senha em branco. " " (é preciso colocar um espaço em branco.)
 
 # Importante!
 Todos os dados salvos serão gravados dentro do diretórios sql_data se esses arquivos não forem apagados, mesmo parando o container na proxima execução seus dados ainda estarão disponíveis.
